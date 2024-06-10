@@ -1,0 +1,232 @@
+/* oswald-latin-200-normal */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url(./webfonts/oswald-latin-200-normal.woff2) format('woff2'), url(./webfonts/oswald-latin-200-normal.woff) format('woff');
+}
+
+/* oswald-latin-300-normal */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(./webfonts/oswald-latin-300-normal.woff2) format('woff2'), url(./webfonts/oswald-latin-300-normal.woff) format('woff');
+}
+
+/* oswald-latin-400-normal */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./webfonts/oswald-latin-400-normal.woff2) format('woff2'), url(./webfonts/oswald-latin-400-normal.woff) format('woff');
+}
+
+/* oswald-latin-500-normal */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(./webfonts/oswald-latin-500-normal.woff2) format('woff2'), url(./webfonts/oswald-latin-500-normal.woff) format('woff');
+}
+
+/* oswald-latin-600-normal */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(./webfonts/oswald-latin-600-normal.woff2) format('woff2'), url(./webfonts/oswald-latin-600-normal.woff) format('woff');
+}
+
+/* oswald-latin-700-normal */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(./webfonts/oswald-latin-700-normal.woff2) format('woff2'), url(./webfonts/oswald-latin-700-normal.woff) format('woff');
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  --bg-main: #373130;
+  --bg-second: #0d0c0c;
+  --text-color: #bbced2;
+  --text-highlight: #8bdaea;
+  --text-alert: #dd3232;
+  font-size: 24px;
+  font-family: 'Oswald', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 300;
+  color: var(--text-color);
+  background-color: var(--bg-main);
+  background:
+    radial-gradient(
+      ellipse at top,
+      var(--bg-main),
+      var(--bg-second)
+    );
+}
+h3 {
+  border-bottom: .5px solid currentColor;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  text-align: center;
+  text-wrap: nowrap;
+  margin: 0 auto;
+  width: clamp(320px, calc(100vw - 2rem), 1024px);
+}
+.overhead-info {
+  padding-bottom: .2rem;
+  border-bottom: .5px solid currentColor;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.overhead-info .name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.sensor-data {
+  line-height: 1.2;
+  text-align: left;
+  width: fit-content;
+  margin: 0 auto 1.5rem;
+  max-width: 100%;
+}
+.reading {
+  margin-top: -.5rem;
+  font-size: clamp(4rem, 30vw, 18rem);
+  min-height: 2rem;
+}
+.secondary-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+}
+.sub {
+  font-size: .5em;
+}
+.monospace {
+  font-family: monospace;
+}
+.hidden {
+  visibility: hidden;
+}
+
+.text-highlight {
+  font-weight: 600;
+  color: var(--text-highlight);
+  background: linear-gradient(
+    to bottom,
+    white,
+    var(--text-highlight)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sensor-updating {
+  opacity: 0;
+  transition: opacity .1s ease-in-out;
+}
+
+.sensors-wrapper {
+  margin: 0 auto;
+  display: inline-block;
+}
+.sensors {
+  text-align: left;
+  display: grid;
+  margin-top: .5rem;
+  gap: .5rem 1rem;
+  grid-template-columns: auto minmax(100px, auto) auto;
+  width: fit-content;
+  max-width: 100%;
+}
+.sensors label {
+  padding: .25rem .75rem;
+  cursor: pointer;
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: center;
+  border-radius: .5rem;
+}
+.sensors label:hover {
+  background-color: #FFFFFF30;
+}
+.sensors label:has(:checked) {
+  background-color: var(--text-color);
+  color: black;
+}
+.sensors input[type="radio"] {
+  margin: 0;
+}
+.sensors button {
+  margin: auto;
+  padding: .5rem;
+}
+.sensors .sensor-info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 0 .5rem;
+}
+.sensors .name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: baseline;
+}
+
+.errors {
+  margin: .5rem auto;
+  list-style: none;
+  max-width: max-content;
+}
+.errors li {
+  margin: .75em;
+  padding: .3em .5em;
+  border-radius: .5em;
+  color: white;
+  background-color: var(--text-alert);
+  text-align: left;
+}

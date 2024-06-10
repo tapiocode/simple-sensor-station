@@ -1,0 +1,5 @@
+# requirements.txt
+
+aiohttp==3.9.5
+bleak==0.22.1
+ruuvitag_sensor==2.3.1

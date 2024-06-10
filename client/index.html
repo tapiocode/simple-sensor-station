@@ -1,0 +1,72 @@
+<!--
+ Copyright (c) 2024 tapiocode
+ https://github.com/tapiocode
+ MIT License
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Client">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.min.css">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon">
+    <script src="dayjs.1.11.10/dayjs.min.js"></script>
+    <script src="dayjs.1.11.10/plugins/duration.min.js"></script>
+    <script src="dayjs.1.11.10/plugins/relativeTime.min.js"></script>
+    <script src="main.js" type="module"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sensor-data">
+        <div class="overhead-info">
+          <span class="name">
+            <i class="bi-speedometer"></i>
+            <span id="selectedSensorName"></span>
+          </span>
+          <div class="ago text-highlight" id="timeAgo"></div>
+        </div>
+        <div class="reading">
+          <span id="temperature" class="text-highlight"></span>
+          <span id="unit" class="sub"></span>
+        </div>
+        <div class="secondary-info hidden">
+          <span>
+            <i class="bi-droplet-half"></i>
+            Hum.
+            <span id="humidity" class="text-highlight"></span>%
+          </span>
+          <span>
+            <i class="bi-wind"></i>
+            <span id="pressure" class="text-highlight"></span> hPa
+          </span>
+        </div>
+      </div>
+      <div class="sensors-wrapper">
+        <h3>
+          <span>Sensors</span>
+          <span class="sensor-updating" data-sensor-updating>
+            <i class="bi-broadcast-pin"></i>
+          </span>
+        </h3>
+        <div class="sensors" id="sensors"></div>
+        <template id="sensorRow">
+          <label>
+            <input type="radio" name="sensor" value="">
+            <div class="sensor-info">
+              <i class="bi-speedometer"></i>
+              <span class="name" data-name></span>
+              <i></i>
+              <span class="monospace sub" data-mac></span>
+            </div>
+            <div>
+                <button>Rename</button>
+            </div>
+          </label>
+        </template>
+      </div>
+      <ul class="errors" id="errors"></ul>
+    </div>
+  </body>
+</html>
